@@ -1,4 +1,4 @@
-forecast_model_merge <- function(folder, model_id, start, end){
+forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, end){
   
   # use library tidyverse
   library("tidyverse")
