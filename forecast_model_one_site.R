@@ -5,7 +5,16 @@ forecast_model_one_site <- function(folder, model_id, site_num){
   library(lubridate)
   library(rMR)
   library(glue)
-  source("ignore_sigpipe.R")
+  library(decor)
+  cpp11::cpp_source(code = '
+    #include <csignal>
+    #include <cpp11.hpp>
+
+    [[cpp11::register]] void ignore_sigpipes() {
+      signal(SIGPIPE, SIG_IGN);
+    }
+    ')
+  ignore_sigpipes()
 
   # get a temporary file
   FaaSr::faasr_get_file(local_file="faasr_neon4cast_data.rds", remote_folder=folder, remote_file="faasr_neon4cast_data.rds")
