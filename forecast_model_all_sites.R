@@ -1,4 +1,4 @@
-forecast_model <- function(folder, model_id){
+forecast_model_all_sites <- function(folder, model_id){
     
     library(tidyverse)
     library(neon4cast)
