@@ -13,7 +13,6 @@ forecast_model_one_site <- function(folder, model_id, site_num){
   target <- data$target
   site_data <- data$site_data
   df_past <- data$df_past
-
   remove(data)
 
   ## Helper function: for each site, average over predicted 0h horizon ensembles to get 'historic values'
