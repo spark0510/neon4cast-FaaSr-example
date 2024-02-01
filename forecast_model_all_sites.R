@@ -5,16 +5,7 @@ forecast_model_all_sites <- function(folder, model_id){
     library(lubridate)
     library(rMR)
     library(glue)
-    library(decor)
-    cpp11::cpp_source(code = '
-    #include <csignal>
-    #include <cpp11.hpp>
-
-    [[cpp11::register]] void ignore_sigpipes() {
-    signal(SIGPIPE, SIG_IGN);
-    }
-    ')
-    ignore_sigpipes()
+    source("ignore_sigpipe.R")
 
     forecast_date <- Sys.Date()
     noaa_date <- Sys.Date() - days(3)  #Need to use yesterday's NOAA forecast because today's is not available yet

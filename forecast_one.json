@@ -2,430 +2,392 @@
     "ComputeServers": {
         "My_GitHub_Account_1": {
             "FaaSType": "GitHubActions",
-            "UserName": "spark0510",
-            "ActionRepoName": "example_2nd_1",
+            "UserName": "<<YOUR_GITHUB_USER_NAME>>",
+            "ActionRepoName": "faasr_neon4cast_example_1",
             "Branch": "main"
         },
         "My_GitHub_Account_2": {
             "FaaSType": "GitHubActions",
-            "UserName": "spark0510",
-            "ActionRepoName": "example_2nd_2",
+            "UserName": "<<YOUR_GITHUB_USER_NAME>>",
+            "ActionRepoName": "faasr_neon4cast_example_2",
             "Branch": "main"
         },
         "My_GitHub_Account_3": {
             "FaaSType": "GitHubActions",
-            "UserName": "spark0510",
-            "ActionRepoName": "example_2nd_3",
+            "UserName": "<<YOUR_GITHUB_USER_NAME>>",
+            "ActionRepoName": "faasr_neon4cast_example_3",
             "Branch": "main"
         }       
     },
     "DataStores": {
         "My_Minio_Bucket": {
             "Endpoint": "https://play.min.io",
-            "Bucket": "faasr-eval-prac",
+            "Bucket": "faasr",
             "Region": "",
             "Writable": "TRUE"
         }
     },
     "FunctionList": {
         "start": {
-            "FunctionName": "null_function",
+            "FunctionName": "forecast_model_prepare_sites",
             "FaaSServer": "My_GitHub_Account_1",
-            "InvokeNext": ["practical1", "practical2", "practical3", "practical4", "practical5", "practical6", "practical7", "practical8", "practical9", "practical10", "practical11", "practical12", "practical13", "practical14", "practical15", "practical16", "practical17", "practical18", "practical19", "practical20", "practical21", "practical22", "practical23", "practical24", "practical25", "practical26", "practical27", "practical28", "practical29", "practical30", "practical31", "practical32", "practical33", "practical34" ]   
+            "InvokeNext": ["site1", "site2", "site3", "site4", "site5", "site6", "site7", "site8", "site9", "site10", "site11", "site12", "site13", "site14", "site15", "site16", "site17", "site18", "site19", "site20", "site21", "site22", "site23", "site24", "site25", "site26", "site27", "site28", "site29", "site30", "site31", "site32", "site33", "site34" ]   
         },
-        "practical1": {
+        "site1": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "1"
             },
             "InvokeNext": "merge"
         },
-        "practical2": {
+        "site2": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "2"
             },
             "InvokeNext": "merge"
         },
-        "practical3": {
+        "site3": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "3"
             },
             "InvokeNext": "merge"
         },
-        "practical4": {
+        "site4": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "4"
             },
             "InvokeNext": "merge"
         },
-        "practical5": {
+        "site5": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "5"
             },
             "InvokeNext": "merge"
         },
-        "practical6": {
+        "site6": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "6"
             },
             "InvokeNext": "merge"
         },
-        "practical7": {
+        "site7": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "7"
             },
             "InvokeNext": "merge"
         },
-        "practical8": {
+        "site8": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "8"
             },
             "InvokeNext": "merge"
         },
-        "practical9": {
+        "site9": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "9"
             },
             "InvokeNext": "merge"
         },
-        "practical10": {
+        "site10": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "10"
             },
             "InvokeNext": "merge"
         },
-        "practical11": {
+        "site11": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "11"
             },
             "InvokeNext": "merge"
         },
-        "practical12": {
+        "site12": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "12"
             },
             "InvokeNext": "merge"
         },
-        "practical13": {
+        "site13": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "13"
             },
             "InvokeNext": "merge"
         },
-        "practical14": {
+        "site14": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "14"
             },
             "InvokeNext": "merge"
         },
-        "practical15": {
+        "site15": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "15"
             },
             "InvokeNext": "merge"
         },
-        "practical16": {
+        "site16": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "16"
             },
             "InvokeNext": "merge"
         },
-        "practical17": {
+        "site17": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "17"
             },
             "InvokeNext": "merge"
         },
-        "practical18": {
+        "site18": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "18"
             },
             "InvokeNext": "merge"
         },
-        "practical19": {
+        "site19": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "19"
             },
             "InvokeNext": "merge"
         },
-        "practical20": {
+        "site20": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "20"
             },
             "InvokeNext": "merge"
         },
-        "practical21": {
+        "site21": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "21"
             },
             "InvokeNext": "merge"
         },
-        "practical22": {
+        "site22": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "22"
             },
             "InvokeNext": "merge"
         },
-        "practical23": {
+        "site23": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "23"
             },
             "InvokeNext": "merge"
         },
-        "practical24": {
+        "site24": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "24"
             },
             "InvokeNext": "merge"
         },
-        "practical25": {
+        "site25": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "25"
             },
             "InvokeNext": "merge"
         },
-        "practical26": {
+        "site26": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "26"
             },
             "InvokeNext": "merge"
         },
-        "practical27": {
+        "site27": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "27"
             },
             "InvokeNext": "merge"
         },
-        "practical28": {
+        "site28": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "28"
             },
             "InvokeNext": "merge"
         },
-        "practical29": {
+        "site29": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "29"
             },
             "InvokeNext": "merge"
         },
-        "practical30": {
+        "site30": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "30"
             },
             "InvokeNext": "merge"
         },
-        "practical31": {
+        "site31": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "31"
             },
             "InvokeNext": "merge"
         },
-        "practical32": {
+        "site32": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "32"
             },
             "InvokeNext": "merge"
         },
-        "practical33": {
+        "site33": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_1",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "33"
             },
             "InvokeNext": "merge"
         },
-        "practical34": {
+        "site34": {
             "FunctionName": "forecast_model_one_sites",
             "FaaSServer": "My_GitHub_Account_2",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "site_num": "34"
             },
             "InvokeNext": "merge"
         },
         "merge": {
-            "FunctionName": "forecast_model_aggregate_sites_and_submit ",
+            "FunctionName": "forecast_model_aggregate_sites_and_submit",
             "FaaSServer": "My_GitHub_Account_3",
             "Arguments": {
-              "folder": "example_2nd",
-              "model_id": "forecast-model-2",
+              "folder": "faasr-neon4cast",
+              "model_id": "faasr",
               "start": "1",
               "end": "34"
         }
       }
     },
-    "ActionContainers":{
-        "start":"ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "merge": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical1": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical2": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical3": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical4": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical5": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical6": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical7": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical8": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical9": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical10": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical11": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical12": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical13": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical14": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical15": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical16": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical17": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical18": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical19": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical20": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical21": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical22": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical23": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical24": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical25": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical26": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical27": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical28": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical29": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical30": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical31": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical32": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical33": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev",
-        "practical34": "ghcr.io/faasr/github-actions-tidyverse:1.0.7.0-dev"
-    },
     "FunctionGitRepo": {
-        "null_function": "spark0510/faasr_eval/R",
-        "forecast_model_one_sites": "spark0510/FaaSr-example",
-        "forecast_model_aggregate_sites_and_submit ": "spark0510/FaaSr-example"
+        "forecast_model_prepare_sites": "FaaSr/neon4cast-FaaSr-example",
+        "forecast_model_one_sites": "FaaSr/neon4cast-FaaSr-example",
+        "forecast_model_aggregate_sites_and_submit ": "FaaSr/neon4cast-FaaSr-example"
     },
     "FunctionCRANPackage": {
         "forecast_model_one_sites": [
@@ -438,7 +400,7 @@
     },    
     "FunctionInvoke": "start",
     "InvocationID": "",
-    "FaaSrLog": "example_2nd",
+    "FaaSrLog": "FaaSrLog",
     "LoggingDataStore": "My_Minio_Bucket",
     "DefaultDataStore": "My_Minio_Bucket"
 }

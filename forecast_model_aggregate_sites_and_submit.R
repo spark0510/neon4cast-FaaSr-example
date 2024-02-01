@@ -8,7 +8,6 @@ forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, e
   for (i in as.numeric(start):as.numeric(end)){
     forecast_file <- paste0("aquatics","-",model_id,"-",i,".csv.gz")
     FaaSr::faasr_get_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
-    FaaSr::faasr_delete_file(remote_folder=folder, remote_file=forecast_file)
   }
 
   # merge the data
@@ -23,4 +22,9 @@ forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, e
   write_csv(result, forecast_file)
   FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
   
+  # delete the temporary files
+  for (i in as.numeric(start):as.numeric(end)){
+    forecast_file <- paste0("aquatics","-",model_id,"-",i,".csv.gz")
+    FaaSr::faasr_delete_file(remote_folder=folder, remote_file=forecast_file)
+  }
 }
