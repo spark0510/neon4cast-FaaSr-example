@@ -1,8 +1,6 @@
 forecast_model_prepare_sites <- function(folder){
     library(tidyverse)
-    library("neon4cast")
-    forecast_date <- Sys.Date()
-    noaa_date <- Sys.Date() - days(3)  #Need to use yesterday's NOAA forecast because today's is not available yet
+    library(neon4cast)
 
     # Step 0: Define a unique name which will identify your model in the leaderboard and connect it to team members info, etc
     #model_id <- "neon4cast_example"
