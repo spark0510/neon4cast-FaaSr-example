@@ -19,6 +19,9 @@
       "start": {
           "FunctionName": "forecast_model_prepare_sites",
           "FaaSServer": "My_GitHub_Account",
+          "Arguments": {
+            "folder": "faasr-neon4cast"
+          },
           "InvokeNext": ["site1", "site2", "site3", "site4", "site5", "site6", "site7", "site8", "site9", "site10", "site11", "site12", "site13", "site14", "site15", "site16", "site17", "site18", "site19", "site20", "site21", "site22", "site23", "site24", "site25", "site26", "site27", "site28", "site29", "site30", "site31", "site32", "site33", "site34" ]   
       },
       "site1": {
