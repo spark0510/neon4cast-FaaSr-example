@@ -1,6 +1,8 @@
 forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, end){
 
-  
+  dir.create("temp")
+  setwd("temp")
+
   # use library tidyverse
   library("tidyverse")
   
@@ -27,4 +29,5 @@ forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, e
     forecast_file <- paste0("aquatics","-",model_id,"-",i,".csv.gz")
     FaaSr::faasr_delete_file(remote_folder=folder, remote_file=forecast_file)
   }
+  FaaSr::faasr_delete_file(remote_folder=folder, remote_file="faasr_neon4cast_data.rds")
 }
