@@ -163,6 +163,6 @@ forecast_model_all_sites <- function(folder, model_id){
 
     # Step 4: Submit forecast!
 
-    #neon4cast::submit(forecast_file = forecast_file, metadata = NULL, ask = FALSE)
+    neon4cast::submit(forecast_file = forecast_file, metadata = NULL, ask = FALSE)
     FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
 }
