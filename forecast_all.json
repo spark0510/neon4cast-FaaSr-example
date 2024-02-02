@@ -21,7 +21,7 @@
             "FaaSServer": "My_GitHub_Account",
             "Arguments": {
               "folder": "faasr-neon4cast",
-              "model_id": "faasr"
+              "model_id": "example_faasr"
             }
         }
     },
