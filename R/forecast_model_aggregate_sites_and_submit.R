@@ -1,5 +1,7 @@
 forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, end){
 
+  dir.create("temp")
+  setwd("temp")
   
   # use library tidyverse
   library("tidyverse")
