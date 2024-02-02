@@ -1,6 +1,6 @@
 forecast_model_prepare_sites <- function(folder){
     library(tidyverse)
-
+    library("neon4cast")
     forecast_date <- Sys.Date()
     noaa_date <- Sys.Date() - days(3)  #Need to use yesterday's NOAA forecast because today's is not available yet
 
