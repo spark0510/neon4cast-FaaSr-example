@@ -54,7 +54,7 @@ setwd('~/neon4cast-FaaSr-example')
 
 # Configure the FaaSr secrets file with your GitHub token
 
-Open the file named env in the editor. You need to enter your GitHub token here: replace the string <<YOUR GITHUB TOKEN>> with your GitHub token, and save this file. 
+Open the file named env in the editor. You need to enter your GitHub token here: replace the string <<YOUR_GITHUB_TOKEN>> with your GitHub token, and save this file. 
 
 The secrets file stores all credentials you use for FaaSr. You will notice that this file has the pre-populated credentials (secret key, access key) to access the Minio "play" bucket
 
