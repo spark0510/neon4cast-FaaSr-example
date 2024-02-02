@@ -134,8 +134,9 @@ forecast_model_one_site <- function(folder, model_id, site_num){
   ### AND HERE WE GO! We're ready to start forecasting ### 
 
   ## Test with a single site first!
+  print("xxxxxxxxx")
   forecast <- forecast_site( sites[[as.numeric(site_num)]] )
-
+  print("zzzzzzzzz")
   #Visualize the ensemble predictions -- what do you think?
   forecast |> 
     ggplot(aes(x = datetime, y = prediction, group = parameter)) +
@@ -146,13 +147,14 @@ forecast_model_one_site <- function(folder, model_id, site_num){
   # csv.gz means that it will be compressed
   file_date <- Sys.Date() #forecast$reference_datetime[1]
   forecast_file <- paste0("aquatics","-",model_id,"-",site_num,".csv.gz")
-
+  print("aaaaaaa")
   #Write csv to disk
   write_csv(forecast, forecast_file)
-
+print("bbbbbbbbb")
   # Step 4: Submit forecast!
 
   #neon4cast::submit(forecast_file = forecast_file, metadata = NULL, ask = FALSE)
   FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
+  print("cccccccc")
 }
 
