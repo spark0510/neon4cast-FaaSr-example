@@ -24,6 +24,9 @@ forecast_model_one_site <- function(folder, model_id, site_num){
   df_past <- data$df_past
   remove(data)
 
+  forecast_date <- Sys.Date()
+  noaa_date <- Sys.Date() - days(3)  #Need to use yesterday's NOAA forecast because today's is not available yet
+  
   ## Helper function: for each site, average over predicted 0h horizon ensembles to get 'historic values'
   noaa_mean_historical <- function(df_past, site, var) {
     df_past |>
