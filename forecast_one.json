@@ -384,7 +384,8 @@
         ]
   },
   "FunctionGitHubPackage": {
-      "forecast_model_one_site": "eco4cast/neon4cast"
+      "forecast_model_one_site": "eco4cast/neon4cast",
+      "forecast_model_prepare_sites": "eco4cast/neon4cast"
   },    
   "FunctionInvoke": "start",
   "InvocationID": "",
