@@ -17,8 +17,8 @@ forecast_model_one_site <- function(folder, model_id, site_num){
   ignore_sigpipes()
 
   # get a temporary file
-  FaaSr::faasr_get_file(local_file="faasr_neon4cast_data.rds", remote_folder=folder, remote_file="faasr_neon4cast_data.rds")
-  data <- read_rds("faasr_neon4cast_data.rds")
+  FaaSr::faasr_get_file(local_file="faasr_neon4cast_data.rds", local_folder=folder, remote_folder=folder, remote_file="faasr_neon4cast_data.rds")
+  data <- read_rds(paste0(folder,"/faasr_neon4cast_data.rds"))
   target <- data$target
   site_data <- data$site_data
   df_past <- data$df_past
