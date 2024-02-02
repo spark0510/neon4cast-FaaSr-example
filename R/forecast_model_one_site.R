@@ -24,6 +24,8 @@ forecast_model_one_site <- function(folder, model_id, site_num){
   df_past <- data$df_past
   remove(data)
 
+  # Step 2: Get meterological predictions as drivers
+  df_past <- neon4cast::noaa_stage3()
   forecast_date <- Sys.Date()
   noaa_date <- Sys.Date() - days(3)  #Need to use yesterday's NOAA forecast because today's is not available yet
   
