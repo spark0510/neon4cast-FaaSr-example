@@ -18,15 +18,15 @@ forecast_model_prepare_sites <- function(folder){
     df_past <- neon4cast::noaa_stage3()
 
     # FaaSr: compare data - stop if there's no change in data
-    FaaSr::faasr_get_file(local_file="faasr_neon4cast_data.rds", remote_folder=folder, remote_file="faasr_neon4cast_data.rds")
-    data_pre <- read_rds("faasr_neon4cast_data.rds")
-    if (identical(target, data_pre$target)){
+    data <- list(target=target, site_data=site_data, df_past=df_past)
+    try(FaaSr::faasr_get_file(local_file="faasr_neon4cast_data.rds", remote_folder=folder, remote_file="faasr_neon4cast_data.rds"), silent=TRUE)
+    data_pre <- try(read_rds("faasr_neon4cast_data.rds"), silent=TRUE)
+    if (identical(data, data_pre)){
         faasr_log("no data changed")
         stop()
     }
 
     # FaaSr: make a temporary file
-    data <- list(target=target, site_data=site_data, df_past=df_past)
     write_rds(data, "faasr_neon4cast_data.rds")
     FaaSr::faasr_put_file(local_file="faasr_neon4cast_data.rds", remote_folder=folder, remote_file="faasr_neon4cast_data.rds")
 }
