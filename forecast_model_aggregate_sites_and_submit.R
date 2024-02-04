@@ -28,7 +28,10 @@ forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, e
   #neon4cast::submit(forecast_file = forecast_file, metadata = NULL, ask = FALSE)
   FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
 
-  print(Sys.time())
+  b <- Sys.time()
+  dir.create("test")
+  write_rds(b, "test/time.rds")
+  FaaSr::faasr_put_file(local_file="time.rds", local_folder="test", remote_folder="test", remote_file="time.rds")
   
   # delete the temporary files
   for (i in as.numeric(start):as.numeric(end)){
