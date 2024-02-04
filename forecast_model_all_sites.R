@@ -132,7 +132,7 @@ forecast_model_all_sites <- function(folder, model_id){
     ### AND HERE WE GO! We're ready to start forecasting ### 
 
     ## Test with a single site first!
-    #forecast <- forecast_site( sites[1] )
+    forecast <- forecast_site( sites[1] )
 
     #Visualize the ensemble predictions -- what do you think?
     forecast |> 
