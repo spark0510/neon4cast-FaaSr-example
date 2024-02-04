@@ -166,5 +166,9 @@ forecast_model_all_sites <- function(folder, model_id){
     #neon4cast::submit(forecast_file = forecast_file, metadata = NULL, ask = FALSE)
     FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
 
-    print(Sys.time())
+    c <- Sys.time()
+    dir.create("test0")
+    write_rds(c, "test0/time.rds")
+    FaaSr::faasr_put_file(local_file="time.rds", local_folder="test0", remote_folder="test0", remote_file="time.rds")
+  
 }
