@@ -31,7 +31,8 @@
         }
     },
     "FunctionGitRepo": {
-        "forecast_model_all_sites": "FaaSr/neon4cast-FaaSr-example"
+        "forecast_model_prepare_sites": "spark0510/neon4cast-FaaSr-example",
+        "forecast_model_all_sites": "spark0510/neon4cast-FaaSr-example"
     },
     "FunctionCRANPackage": {
         "forecast_model_all_sites": [
@@ -42,7 +43,7 @@
     "FunctionGitHubPackage": {
         "forecast_model_all_sites": "eco4cast/neon4cast"
     },    
-    "FunctionInvoke": "forecast_all",
+    "FunctionInvoke": "start",
     "InvocationID": "",
     "FaaSrLog": "FaaSrLog",
     "LoggingDataStore": "My_Minio_Bucket",
