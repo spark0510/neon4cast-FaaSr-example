@@ -25,8 +25,10 @@ forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, e
   write_csv(result, forecast_file)
 
   # submit forecast
-  neon4cast::submit(forecast_file = forecast_file, metadata = NULL, ask = FALSE)
+  #neon4cast::submit(forecast_file = forecast_file, metadata = NULL, ask = FALSE)
   FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
+
+  print(Sys.time())
   
   # delete the temporary files
   for (i in as.numeric(start):as.numeric(end)){
