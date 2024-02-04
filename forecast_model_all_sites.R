@@ -132,7 +132,7 @@ forecast_model_all_sites <- function(folder, model_id){
     ### AND HERE WE GO! We're ready to start forecasting ### 
 
     ## Test with a single site first!
-    forecast <- forecast_site( sites[1] )
+    #forecast <- forecast_site( sites[1] )
 
     #Visualize the ensemble predictions -- what do you think?
     forecast |> 
@@ -159,7 +159,7 @@ forecast_model_all_sites <- function(folder, model_id){
     FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
 
     c <- Sys.time()
-    if (!dir.exists("test0"){
+    if (!dir.exists("test0")){
       dir.create("test0")
     }
     write_rds(c, "test0/time.rds")
