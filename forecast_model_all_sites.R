@@ -14,7 +14,6 @@ forecast_model_all_sites <- function(folder, model_id){
         signal(SIGPIPE, SIG_IGN);
         }
         ')
-    ignore_sigpipes()
 
     forecast_date <- Sys.Date()
     noaa_date <- Sys.Date() - days(3)  #Need to use yesterday's NOAA forecast because today's is not available yet
