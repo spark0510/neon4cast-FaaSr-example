@@ -29,7 +29,9 @@ forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, e
   FaaSr::faasr_put_file(local_file=forecast_file, remote_folder=folder, remote_file=forecast_file)
 
   b <- Sys.time()
-  dir.create("test")
+  if (!dir.exists("test"){
+    dir.create("test")
+  }
   write_rds(b, "test/time.rds")
   FaaSr::faasr_put_file(local_file="time.rds", local_folder="test", remote_folder="test", remote_file="time.rds")
   
