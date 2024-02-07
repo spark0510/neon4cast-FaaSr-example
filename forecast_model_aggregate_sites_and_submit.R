@@ -5,7 +5,6 @@ forecast_model_aggregate_sites_and_submit <- function(folder, model_id, start, e
 
   # use library tidyverse
   library("tidyverse")
-  library("neon4cast")
   
   # get the temporary the site data one by one from the bucket.
   for (i in as.numeric(start):as.numeric(end)){
