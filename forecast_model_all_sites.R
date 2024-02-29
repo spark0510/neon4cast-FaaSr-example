@@ -51,11 +51,9 @@ forecast_model_all_sites <- function(folder, model_id){
 
     ## Helper fn: get daily average temperature from each ensemble in future
     noaa_mean_forecast <- function(site, var, reference_date) {
-    endpoint = "data.ecoforecast.org"
-    bucket <- glue::glue("neon4cast-drivers/noaa/gefs-v12/stage1/0/{reference_date}")
-    s3 <- arrow::s3_bucket(bucket, endpoint_override = endpoint, anonymous = TRUE)
+    s3 <- neon4cast::noaa_stage2(start_date = as.character(noaa_date))
     
-    # stage1 air temp is Celsius
+    # stage2 air temp is Celsius
     arrow::open_dataset(s3) |>
         dplyr::filter(site_id == site,
                     datetime >= lubridate::as_datetime(forecast_date),
