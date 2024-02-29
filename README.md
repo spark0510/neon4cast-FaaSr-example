@@ -42,6 +42,9 @@ You may already have this setup in your RStudio environment. If you don't, confi
 
 ```
 usethis::use_git_config(user.name = "YOUR_GITHUB_USERNAME", user.email = "YOUR_GITHUB_EMAIL")
+```
+
+```
 credentials::set_github_pat()
 ```
 
