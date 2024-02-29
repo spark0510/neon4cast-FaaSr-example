@@ -29,7 +29,7 @@ library('minioclient')
 install_mc()
 
 # install FaaSr
-devtools::install_github('FaaSr/FaaSr-package@1.0.8.0',force=TRUE)
+install.packages('FaaSr')
 library('FaaSr')
 
 # add credentials library
