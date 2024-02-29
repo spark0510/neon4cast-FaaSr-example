@@ -20,7 +20,7 @@ forecast_model_all_sites <- function(folder, model_id){
     noaa_date <- Sys.Date() - days(3)  #Need to use yesterday's NOAA forecast because today's is not available yet
 
     # Step 0: Define a unique name which will identify your model in the leaderboard and connect it to team members info, etc
-    #model_id <- "neon4cast_example"
+    model_id <- "faasr_example"
 
     # Step 1: Download latest target data and site description data
     target <- readr::read_csv(paste0("https://data.ecoforecast.org/neon4cast-targets/",
