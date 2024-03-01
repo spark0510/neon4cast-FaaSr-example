@@ -96,7 +96,8 @@ forecast_site <- function(site) {
   
   # Fit linear model based o # n past data: water temperature = m * air temperature + b
   fit <- lm(temperature ~ air_temperature, data = site_target)
-  
+
+  start_date = as.character(noaa_date)
   s3 <- arrow::s3_bucket(paste0("bio230014-bucket01/neon4cast-drivers/noaa/gefs-v12/stage2/reference_datetime=", 
                                 start_date), 
                          endpoint_override = "https://sdsc.osn.xsede.org", 
