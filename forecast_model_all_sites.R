@@ -8,8 +8,8 @@ forecast_model_all_sites <- function(folder, model_id){
     library(decor)
 
     
-    forecast_date <- Sys.Date() - days(3)
-    noaa_date <- Sys.Date() - days(6)  #Need to use yesterday's NOAA forecast because today's is not available yet
+    forecast_date <- Sys.Date() - days(23)
+    noaa_date <- Sys.Date() - days(26)  #Need to use yesterday's NOAA forecast because today's is not available yet
 
     # Step 0: Define a unique name which will identify your model in the leaderboard and connect it to team members info, etc
     #model_id <- "neon4cast_example"
